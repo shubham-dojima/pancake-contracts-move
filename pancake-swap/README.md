@@ -79,3 +79,5 @@ $ aptos move compile
 ```shell
 $ aptos move publish
 ```
+
+c0a7633066f02bc6c16e7618b8f91711bdff2c954975c9a704c1838fd05f6549

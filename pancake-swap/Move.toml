@@ -7,8 +7,8 @@ AptosFramework = {git = "https://github.com/aptos-labs/aptos-core.git", subdir =
 AptosStdlib = {git = "https://github.com/aptos-labs/aptos-core.git", subdir = "aptos-move/framework/aptos-stdlib/", rev = "2a458b5ffaaf6a9de6fac679a53912c0be9fe217"}
 
 [addresses]
-pancake = "c7efb4076dbe143cbcd98cfaaa929ecfc8f299203dfff63b95ccb6bfe19850fa"
-dev = "0f9d24010ad96659ee980598ff3848911253bda014e8fe59ce40e9eed9f6585a"
+pancake = "af6b607d5e6dad94c7c56cd19f7830ecd683f2d598d08b0f42687e3815c0814c"
+dev = "c0a7633066f02bc6c16e7618b8f91711bdff2c954975c9a704c1838fd05f6549"
 zero = "0000000000000000000000000000000000000000000000000000000000000000"
-default_admin = "a2c656b06aeff1406fd5ff837fa5b07825437a5f1ce6d75cad3f4e5c39ea955b"
+default_admin = "c0a7633066f02bc6c16e7618b8f91711bdff2c954975c9a704c1838fd05f6549"
 test_coin = "0x16"
