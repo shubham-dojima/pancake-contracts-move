@@ -774,16 +774,17 @@ module pancake::swap {
         aborts_if !exists<SwapInfo>(RESOURCE_ACCOUNT);
         let swap_info = borrow_global_mut<SwapInfo>(RESOURCE_ACCOUNT);
 
-        aborts_if !coin::is_account_registered<LPToken<X, Y>>(swap_info.fee_to);
+        // Replace coin::is_account_registered with coin::CoinStore existence check
+        aborts_if !exists<coin::CoinStore<LPToken<X, Y>>>(swap_info.fee_to);
         aborts_if !exists<TokenPairMetadata<X, Y>>(RESOURCE_ACCOUNT);
 
-        aborts_if !coin::is_account_registered<LPToken<Y, X>>(swap_info.fee_to);
+        aborts_if !exists<coin::CoinStore<LPToken<Y, X>>>(swap_info.fee_to);
         aborts_if !exists<TokenPairMetadata<Y, X>>(RESOURCE_ACCOUNT);
 
-        let metadata1 = borrow_global_mut<TokenPairMetadata<X, Y>>(RESOURCE_ACCOUNT);
+        let metadata1 = global<TokenPairMetadata<X, Y>>(RESOURCE_ACCOUNT);
         aborts_if coin::value(metadata1.fee_amount) == 0;
 
-        let metadata2 = borrow_global_mut<TokenPairMetadata<Y, X>>(RESOURCE_ACCOUNT);
+        let metadata2 = global<TokenPairMetadata<Y, X>>(RESOURCE_ACCOUNT);
         aborts_if coin::value(metadata2.fee_amount) == 0;
     }
 
